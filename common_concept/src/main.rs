@@ -6,4 +6,13 @@ fn main() {
     println!("before change y: (x + y)*pi = ({} + {})*pi = {}", x, y, (f64::from(x + y)* PI)); //using f64::from(a) to change a => f64 data type
     y = 5;
     println!("after change y: (x + y)*pi = ({} + {})*pi = {}", x, y, (f64::from(x + y)* PI));
+
+    {
+        // x = 10; failed because x is immutable
+        let x = x + y; //shadow a immutable varibale with the same name using let keyword
+        println!("new x : {}", x);
+        println!("after change x: (x + y)*pi = ({} + {})*pi = {}", x, y, (f64::from(x + y)* PI));
+    }
+
+    println!("old x: {}", x)
 }
