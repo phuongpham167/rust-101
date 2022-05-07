@@ -14,5 +14,10 @@ fn main() {
         println!("after change x: (x + y)*pi = ({} + {})*pi = {}", x, y, (f64::from(x + y)* PI));
     }
 
-    println!("old x: {}", x)
+    println!("old x: {}", x);
+
+    let spaces = "dddd";
+    // spaces = spaces.len(); // error because the shadow only change value cannot change varibale's type ( form string to int)
+
+    println!("{}", spaces)
 }
