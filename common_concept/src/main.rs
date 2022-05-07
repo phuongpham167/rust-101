@@ -41,8 +41,10 @@ fn main() {
     let element = arr[index];
     println!("{} {}", index, element);
 
-    let alpha = plus_one(2);
+    let alpha = plus_one(9);
     println!("{}", alpha);
+
+    println!("ah {}", loop_demo(5));
 }
 
 fn cal(x: i32, y: i32) -> f64 {
@@ -50,6 +52,38 @@ fn cal(x: i32, y: i32) -> f64 {
 }
 
 fn plus_one(x: i32) -> i32 {
-    //x + 1; // add ; -> statement do not evaluate value, it is expressed by () - unit type donot return
-    x + 1 // do not add l -> expression return value i32
+   
+    if x <= 5 {
+        println!("condition was true");       
+    } else {
+        println!("condition was false");
+    }
+
+
+     //x + 1; // add ; -> statement do not evaluate value, it is expressed by () - unit type donot return
+    if x <=5 {x + 1} else {x + 2} // do not add ; -> expression return value i32
+}
+
+fn loop_demo (n: i32)-> i32 {
+    let mut i = 0;
+    let result = loop {
+        if i == n {
+            break i * 2 //bread loop and return value
+        }
+
+        println!("The {}", i + 1);
+        i = i + 1;
+    };
+
+    while i != 0 {
+        println!("{}!", i);
+
+        i = i - 1;
+    }
+
+    for number in (1..4).rev() { //rev la reverse
+        println!("wow {}", number);
+    }
+
+    return result
 }
